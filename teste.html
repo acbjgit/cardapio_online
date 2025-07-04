@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="lista-itens">
+
+    </div>
+
+
+
+    <script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+var MENU = {
+    "churrascos": [
+        {
+            "id": "ribs-brisket-and-burnt-ends",
+            "img": "./img/cardapio/churrasco/joes-kc-ribs-brisket-and-burnt-ends.6710e994980e485e6441b794717ad6fb.jpg",
+            "name": "Joe's KC BBQ",
+            "dsc": "Joe's KC Ribs, Brisket & Burnt Ends",
+            "price": 110.99,
+            "itens": [
+                { nome: "tomate", preco: 2.00},
+                { nome: "cebola", preco: 2.00},
+                { nome: "mussarela", preco: 2.00},
+                { nome: "mostarda", preco: 2.00}
+            ]
+        },
+    ],
+    "burgers": [
+        {
+            "id": "the-gramercy-tavern-burger-4-pack",
+            "img": "./img/cardapio/burguers/Gramercy-Tavern-Burger-and-Kielbasa-Kit-6.4.21-72ppi-1x1-15.jpg",
+            "name": "Gramercy Tavern",
+            "dsc": "The Gramercy Tavern Burger - 4 Pack com maionese, katchup, mostarda, cebola, champinhon, alface, queijo mussarela, pão com gergilin",
+            "price": 99,
+            "itens": [
+                { nome: "tomate", preco: 2.00},
+                { nome: "cebola", preco: 2.00},
+                { nome: "mussarela", preco: 2.00},
+                { nome: "mostarda", preco: 2.00}
+            ]
+        },
+    ]
+}
+
+$(document).ready(function() {
+    const metro = [
+        {
+        name: 'Luke',
+        department: 'Financeiro',
+        salary: 1500
+        }, 
+        {
+        name: 'Han',
+        department: 'Financeiro',
+        salary: 1200
+        }, 
+        {
+        name: 'Ben',
+        department: 'Marketing',
+        salary: 2000
+        }, 
+        {
+        name: 'Leia',
+        department: 'Marketing',
+        salary: 1750
+        }, 
+        {
+        name: 'Rey',
+        department: 'Financeiro',
+        salary: 1000
+        }
+    ]
+
+               
+        const metroFinanceiroSalario = metro.filter(p => {
+            return p.department === 'Financeiro'
+        })
+        console.log(metroFinanceiroSalario)
+
+        const salarioMetroFinanceiro = metroFinanceiroSalario.map(item => {
+            return item.salary
+        })
+        console.log(salarioMetroFinanceiro)
+
+        const soma = salarioMetroFinanceiro.reduce((total, currentValue) => {
+            return total + currentValue
+        }) 
+        console.log(soma)
+
+})
+
+
+
+
+
+    </script>
+</body>
+</html>
